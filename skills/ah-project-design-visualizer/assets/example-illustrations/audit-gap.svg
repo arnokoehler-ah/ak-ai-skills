@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 260" role="img" aria-labelledby="audit-title">
+  <title id="audit-title">Een batchfout vóór de commitgrens voorkomt dat de auditrij definitief wordt vastgelegd</title>
+  <rect x="25" y="57" width="150" height="103" rx="16" fill="#30445c"/>
+  <path d="M64 90l13 12-13 12m29 0h34" stroke="#a3bdff" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M191 108h55" stroke="#ff9a87" stroke-width="5" stroke-dasharray="6 7"/>
+  <circle cx="271" cy="108" r="25" fill="#ff9a87"/><path d="M262 99l18 18m0-18-18 18" stroke="#5b3446" stroke-width="5" stroke-linecap="round"/>
+  <path d="M323 46v143" stroke="#ffda83" stroke-width="3" stroke-dasharray="5 7"/>
+  <text x="324" y="31" fill="#ffda83" font-family="sans-serif" font-size="19" text-anchor="middle">COMMIT</text>
+  <rect x="366" y="70" width="90" height="84" rx="12" fill="#28344d" stroke="#7285a2" stroke-width="2" stroke-dasharray="6 5"/>
+  <path d="M387 94h48m-48 18h48m-48 18h30" stroke="#7285a2" stroke-width="5" stroke-linecap="round"/>
+  <g fill="#f5f3ed" font-family="sans-serif" font-size="22" font-weight="700" text-anchor="middle"><text x="100" y="194">Uitvoering</text><text x="271" y="194">Fout</text><text x="412" y="194">Audit</text></g>
+  <text x="250" y="239" fill="#b6c3d9" font-family="sans-serif" font-size="19" text-anchor="middle">Geen commit → geen vastgelegde auditrij.</text>
+</svg>

@@ -14,4 +14,12 @@ jobs:
         with:
           python-version: '3.12'
       - name: Validate skill structure and frontmatter
-        run: ./scripts/validate-skills.sh
+        run: bash scripts/validate-skills.sh
+      - name: Verify self-contained builds
+        run: bash skills/ah-project-design-visualizer/tests/test_build.sh
+      - name: Install browser test tooling
+        run: |
+          python -m pip install playwright==1.64.0
+          python -m playwright install --with-deps chromium
+      - name: Verify visualizer and bilingual behavior
+        run: python skills/ah-project-design-visualizer/tests/test_visual_overview.py

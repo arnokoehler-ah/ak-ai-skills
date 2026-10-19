@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Test stub: ignore args/stdin, emit a recognizable SVG that mimics real
+# PlantUML output by including a <!--SRC=[base64]--> metadata comment.
+cat >/dev/null 2>&1 || true
+printf '<svg xmlns="http://www.w3.org/2000/svg"><!--SRC=[QUJDREVGMTIzNA==]--><text>STUBSVGMARKER</text></svg>'

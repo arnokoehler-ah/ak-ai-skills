@@ -1,0 +1,36 @@
+@startuml
+title Sequence · Een plan uitvoeren (voorbeeld)
+actor "Ontwikkelaar" as Developer
+participant "CLI / execute_plan" as CLI
+participant Gmail
+database "Auditopslag" as Audit
+Developer -> CLI : apply --execute
+activate CLI
+CLI -> Audit : Transactie starten
+note right of CLI
+  VERIFIED voorbeeldbewijs
+  src/mailbrain/apply.py:73 execute_plan
+end note
+loop Elke geplande wijziging
+  CLI -> Gmail : Wijziging toepassen
+  Gmail --> CLI : Resultaat
+end
+alt Batch slaagt
+  CLI -> Audit : Batchresultaat opslaan
+  == COMMITGRENS ==
+  CLI -> Audit : Commit
+  CLI --> Developer : Resultaat
+else Batch faalt vóór de commit
+  CLI -> Audit : Terugdraaien
+  note over CLI, Audit
+    VERIFIED voorbeeldbewijs
+    src/mailbrain/apply.py:118-128
+    Geen gecommitte auditrij voor deze batch.
+  end note
+  CLI --> Developer : Fout
+end
+note over CLI, Gmail
+  UNKNOWN: retrybeleid en foutfrequentie in productie
+end note
+deactivate CLI
+@enduml

@@ -1,0 +1,24 @@
+@startuml
+title Sequence · Scannen zonder wijzigingen (voorbeeld)
+actor "Ontwikkelaar" as Developer
+participant "CLI / scan" as CLI
+participant Gmail
+participant "Regelengine" as Rules
+Developer -> CLI : scan
+activate CLI
+CLI -> Gmail : Metadata lezen
+Gmail --> CLI : Berichtmetadata
+CLI -> Rules : Berichten classificeren
+Rules --> CLI : Voorgestelde wijzigingen
+CLI --> Developer : Plan
+note over CLI, Rules
+  VERIFIED voorbeeldbewijs
+  src/mailbrain/scan.py:scan
+  src/mailbrain/rules/engine.py:classify
+  Geen mailboxwijziging in deze route.
+end note
+note over CLI, Gmail
+  UNKNOWN: foutafhandeling en retrybeleid
+end note
+deactivate CLI
+@enduml

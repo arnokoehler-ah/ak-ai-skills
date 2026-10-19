@@ -1,0 +1,33 @@
+{
+  "source_repository": "https://github.com/arnokoehler/ak-ai-skills",
+  "source_revision": "bc8bef9691b08cf99308d772f938e2e838a5ea58",
+  "source_working_tree": "clean",
+  "source_path": "skills/project-design-visualizer",
+  "distribution_name": "ah-project-design-visualizer",
+  "files": {
+    "SKILL.md": "a618e2bbea2dc891e069f809910363be1002539a2a99e8f8f7a05df19594a981",
+    "assets/bilingual-overviews.md": "82c02edbb8bacea815ecbc47e1c705c1e37fd8476870c4963502ce23ac66600a",
+    "assets/build.sh": "e0b38a8b8c6c1465daf4d3eaf7d174c04d91abdbe4972d231500936727112a3a",
+    "assets/example-current-state.yaml": "2ab2a0f45f845ae4a4815bbc94a3cf1f805324bd9dca0a1a8418ef9a7743ae8f",
+    "assets/example-diagrams/c4-container.puml": "ad944021beb0c0e969fa363fabe922b6bc850515fbccfabff126b770069f068a",
+    "assets/example-diagrams/c4-context.puml": "fa17d9679449cfdc5ba7aa0989bc7a316b906d949a0856b8103b6c0e6a6b6585",
+    "assets/example-diagrams/seq-apply.puml": "01a2415e6c9c137c6769bdefc7c52df413af800879cb4efee041cedf49cb9cb1",
+    "assets/example-diagrams/seq-scan.puml": "3575c4837ca39e3767d5e78d3b6e3d27d179b897db2e6a4d7f6a922ea3ce9435",
+    "assets/example-illustrations/audit-gap.svg": "b25b9bcd6893264445f4d571e15ffc447354f4db366d68decafcda46005ab83c",
+    "assets/example-illustrations/configuration.svg": "223f66b89583673add0f767355690cc5d5ce92443876ceba31a015a2c5896d0b",
+    "assets/example-illustrations/mail-journey.svg": "fa3f3daf8af179678e9fb887241f75c29ca5418a60b12a2a9e5128f109e87f84",
+    "assets/example-overview-data.json": "94edcb3896ae9ced9a703a18feb2b2726d807d44714823a22b8d6254a7388729",
+    "assets/interface-translations.json": "ec2bbae32320fa409c0ed481d9263420518d660e9bc704c44ab62db47450ea7c",
+    "assets/language-switch.js": "91b5aea8ef4d980a8af7e9aa1f4401b2abfc03c68eef29b11a0fbd7b15a71460",
+    "assets/template.html": "2e38bb45bc8a4479c766cf616e89c0e52f09b2b5f651c9b5d4451909b60fb202",
+    "assets/theme.puml": "00e01bcd0b3d86ad384b2b334c98f0ae0fc38873b4656191b40886f7849a2c2a",
+    "assets/validate-translations.py": "513a7683328c3dc9f4872f307bcbe8ff6892f8ad46baa24b7e83874b277caf2a",
+    "assets/visual-explanation.md": "62a72515bafa0db5b234c7ca99c8de1273d9382006ae02a1316845300b97c073",
+    "docs/adr/0001-visual-entry-with-technical-depth.md": "0d9caf1a7b3f646153374fed3cc50b2feaf65859379301a2b5fc788659628b9a",
+    "docs/adr/0002-bilingual-rendering-and-distribution.md": "17968f6752585e96c45c6d9147f5e9034ed29950687af3d276ba8beae32929de",
+    "tests/diagrams/arch.puml": "0a81e43403808425fd205e7669e5337b5beec0d5c3abbc2f05fafa7ecefd920a",
+    "tests/fake-plantuml": "d18faece951dc4485f0a45c486693b390b264680e51dc53981f7aff2d2e306d2",
+    "tests/test_build.sh": "4590c03ed77662afe21a56e11e06a9fa20e17c7c00ec3d467376d11d0c88f9a3",
+    "tests/test_visual_overview.py": "000a898816b1108714fe9e7c84e0e30f905f662d242b8bf873b86afa379668c1"
+  }
+}

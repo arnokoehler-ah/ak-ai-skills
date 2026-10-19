@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 260" role="img" aria-labelledby="journey-title">
+  <title id="journey-title">Van inbox via een read-only scan naar een plan en een afzonderlijke uitvoerstap</title>
+  <circle cx="74" cy="99" r="54" fill="#273951"/>
+  <rect x="35" y="72" width="77" height="51" rx="9" fill="#ffda83"/>
+  <path d="M39 77l35 25 34-25" stroke="#aa8054" stroke-width="4" fill="none"/>
+  <path d="M140 101h54l-12-8m12 8-12 8" stroke="#87ead0" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <rect x="215" y="48" width="74" height="107" rx="11" fill="#c6adff"/>
+  <path d="M232 75h40m-40 20h40m-40 20h27m-27 20h34" stroke="#71699c" stroke-width="6" stroke-linecap="round"/>
+  <path d="M313 101h53l-12-8m12 8-12 8" stroke="#87ead0" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <circle cx="427" cy="102" r="44" fill="#87ead0"/>
+  <path d="M409 103l14 14 23-30" stroke="#254c57" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#f5f3ed" font-family="sans-serif" font-weight="700" font-size="22" text-anchor="middle"><text x="74" y="192">Inbox</text><text x="252" y="192">Plan</text><text x="427" y="192">Uitvoeren</text></g>
+  <text x="250" y="235" fill="#b6c3d9" font-family="sans-serif" font-size="19" text-anchor="middle">Lezen en veranderen zijn aparte stappen.</text>
+</svg>

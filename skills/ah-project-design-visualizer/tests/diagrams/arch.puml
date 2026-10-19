@@ -1,0 +1,5 @@
+@startuml
+component cli
+component apply
+cli --> apply : "VERIFIED src/mailbrain/cli.py:113 execute_plan"
+@enduml

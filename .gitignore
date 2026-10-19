@@ -2,3 +2,5 @@
 apm_modules/
 .claude/skills/
 .agents/skills/
+__pycache__/
+*.pyc

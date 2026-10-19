@@ -1,0 +1,81 @@
+' Dark, colorblind-safe theme injected by build.sh after @startuml so diagrams
+' match the dark project-overview page. Palette = Okabe-Ito based: state coding
+' uses blue (used) / orange (partial) / gray (unused) — the safest trio across
+' deuteran/protan/tritan color vision. Text is light for WCAG-AA contrast on the
+' dark panels. No @startuml/@enduml here.
+skinparam backgroundColor #0c1328
+skinparam shadowing false
+skinparam DefaultFontColor #f2f4f7
+skinparam DefaultFontName sans-serif
+skinparam DefaultFontSize 14
+skinparam RoundCorner 14
+skinparam Padding 12
+skinparam nodesep 45
+skinparam ranksep 50
+skinparam ArrowColor #87ead0
+skinparam ArrowFontColor #f2f4f7
+skinparam TitleFontColor #f2f4f7
+skinparam NoteBackgroundColor #253450
+skinparam NoteBorderColor #8399bb
+skinparam NoteFontColor #f2f4f7
+skinparam NoteFontSize 12
+skinparam actor {
+  BackgroundColor #29435b
+  BorderColor #a3bdff
+  FontColor #f2f4f7
+}
+skinparam sequence {
+  ParticipantBackgroundColor #29435b
+  ParticipantBorderColor #a3bdff
+  ParticipantFontColor #f2f4f7
+  ActorBackgroundColor #29435b
+  ActorBorderColor #a3bdff
+  ActorFontColor #f2f4f7
+  LifeLineBorderColor #8399bb
+  LifeLineBackgroundColor #263c51
+  ArrowColor #87ead0
+  MessageAlign center
+  BoxBorderColor #5a6478
+  GroupBackgroundColor #24304a
+  GroupBodyBackgroundColor #141f39
+  GroupBorderColor #5a6478
+  GroupFontColor #f2f4f7
+  GroupHeaderFontColor #f2f4f7
+  DividerBackgroundColor #254c53
+  DividerBorderColor #87ead0
+  DividerFontColor #f2f4f7
+}
+skinparam database {
+  BackgroundColor #254854
+  BorderColor #87ead0
+  FontColor #f2f4f7
+}
+skinparam component {
+  BackgroundColor #2c3e63
+  BorderColor #a3bdff
+  FontColor #f2f4f7
+}
+skinparam class {
+  BackgroundColor #202e4a
+  BorderColor #AEB6C2
+  FontColor #f2f4f7
+  AttributeFontColor #cbd5e1
+  ArrowColor #7fb4ff
+
+  BackgroundColor<<used>> #12405C
+  BorderColor<<used>> #56B4E9
+  FontColor<<used>> #EAF6FF
+
+  BackgroundColor<<partial>> #5A3A0A
+  BorderColor<<partial>> #E69F00
+  FontColor<<partial>> #FFF3DE
+
+  BackgroundColor<<unused>> #2A2F3A
+  BorderColor<<unused>> #AEB6C2
+  FontColor<<unused>> #EDEFF3
+}
+skinparam rectangle {
+  BackgroundColor #263750
+  BorderColor #8399bb
+  FontColor #f2f4f7
+}

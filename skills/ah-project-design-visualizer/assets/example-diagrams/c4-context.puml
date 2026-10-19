@@ -1,0 +1,13 @@
+@startuml
+title C4 · Systeemcontext · MailBrain (voorbeeld)
+actor "Ontwikkelaar" as user
+rectangle "MailBrain\n<<software system>>\nPlant en verwerkt inboxwijzigingen" as mailbrain
+rectangle "Gmail\n<<external system>>\nMetadata en wijzigingen van de inbox" as gmail
+user --> mailbrain : CLI-commando's
+mailbrain --> gmail : Metadata lezen / wijzigingen toepassen
+note bottom of mailbrain
+  VERIFIED voorbeeldbewijs
+  src/mailbrain/scan.py:scan
+  src/mailbrain/apply.py:73
+end note
+@enduml

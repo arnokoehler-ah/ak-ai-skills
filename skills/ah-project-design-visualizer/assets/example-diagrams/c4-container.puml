@@ -1,0 +1,18 @@
+@startuml
+title C4 · Containers · MailBrain (voorbeeld)
+actor "Ontwikkelaar" as user
+rectangle "MailBrain · grens van het softwaresysteem" {
+  component "CLI-toepassing\n<<container: Python process>>\nScannen, plannen en uitvoeren" as cli
+  database "Auditopslag\n<<data store>>\nAuditregels per batch" as audit
+}
+rectangle "Gmail\n<<external system>>" as gmail
+user --> cli : CLI
+cli --> gmail : Mailboxaanvragen
+cli --> audit : Transactie / commit
+note bottom of cli
+  VERIFIED voorbeeldbewijs
+  src/mailbrain/apply.py:73-128
+  Losse Python-modules zijn componenten,
+  geen aparte deploybare containers.
+end note
+@enduml
