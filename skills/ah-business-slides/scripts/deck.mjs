@@ -79,7 +79,7 @@ function columns(pptx, slide, item, theme, areaWidth, illustrated) {
   if (illustrated) {
     item.columns.forEach((column, i) => {
       const y = 2.85 + i * 1.0;
-      text(slide, `${i + 1}`, .76, y + .04, .3, .3, theme, { fontSize: 18, color: theme.blue, bold: true });
+      text(slide, `${i + 1}`, .76, y + .04, .3, .35, theme, { fontSize: 18, color: theme.blue, bold: true });
       text(slide, column.title, 1.25, y, areaWidth - .6, .42, theme, { fontSize: 23, bold: true });
       text(slide, column.body, 1.25, y + .43, areaWidth - .7, .54, theme, { fontSize: 18, color: theme.muted, valign: 'top' });
     });

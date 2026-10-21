@@ -53,7 +53,7 @@ repository is public.
 Install only the presentation skill:
 
 ```bash
-apm install --global --target claude,opencode 'arnokoehler-ah/ak-ai-skills/skills/ah-business-slides#v1.2.0'
+apm install --global --target claude,opencode 'arnokoehler-ah/ak-ai-skills/skills/ah-business-slides#v1.2.1'
 ```
 
 Ask your agent: **“Gebruik ah-business-slides om een bewerkbare AH-presentatie

@@ -97,6 +97,14 @@ test('crops a square image proportionally into a portrait content frame', async 
   assert.equal(crop[3], '0');
 });
 
+test('builds every documented illustrated layout with concise editable content', async t => {
+  const deck = sample();
+  for (const index of [0, 1, 2, 5]) deck.slides[index].image = path.join(root, 'assets/ah-logo.png');
+  const f = await fixture(t, deck);
+  const result = build(f.input, f.output);
+  assert.equal(result.status, 0, result.stderr);
+});
+
 test('rejects undecodable image content before writing a deck', async t => {
   const f = await fixture(t);
   const deck = sample();
