@@ -30,7 +30,7 @@ targets:
   - opencode
 dependencies:
   apm:
-    - arnokoehler-ah/ak-ai-skills#v1.1.0
+    - arnokoehler-ah/ak-ai-skills#v1.2.1
 ```
 
 ```bash
