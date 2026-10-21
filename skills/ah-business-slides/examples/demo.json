@@ -1,0 +1,69 @@
+{
+  "title": "Samen maken we het waar",
+  "language": "nl",
+  "footer": "VOORBEELDPRESENTATIE · FICTIEVE CIJFERS",
+  "slides": [
+    {
+      "layout": "cover",
+      "kicker": "STRATEGIE & SAMENWERKING",
+      "title": "Samen klaar\nvoor de\nvolgende stap.",
+      "subtitle": "Eén richting. Heldere keuzes.\nZichtbaar resultaat.",
+      "steps": ["Richting", "Actie", "Resultaat"],
+      "notes": "Introduceer het doel van deze voorbeeldpresentatie. De inhoud en cijfers zijn illustratief."
+    },
+    {
+      "layout": "columns",
+      "kicker": "VAN AMBITIE NAAR ACTIE",
+      "title": "Eén helder plan.\nDrie gezamenlijke stappen.",
+      "columns": [
+        { "title": "Kies het doel.", "body": "Maak scherp wat we samen willen bereiken." },
+        { "title": "Maak het concreet.", "body": "Spreek de eerste stap af, met een duidelijke eigenaar." },
+        { "title": "Leer en verbeter.", "body": "Bekijk wat werkt en stuur samen bij." }
+      ],
+      "decision": "Besluit: akkoord op de richting en de eerste gezamenlijke stap.",
+      "notes": "Benoem bij iedere stap wie betrokken is. Maak de besluitvraag expliciet."
+    },
+    {
+      "layout": "metrics",
+      "kicker": "EEN OVERZICHTELIJKE PILOT",
+      "title": "Klein beginnen.\nGericht leren.",
+      "metrics": [
+        { "value": "6", "label": "weken voor de pilot" },
+        { "value": "2", "label": "teams die samenwerken" },
+        { "value": "1", "label": "gezamenlijke evaluatie" }
+      ],
+      "decision": "Voorbeeldvoorstel: leg doel, eigenaar en evaluatiemoment vast.",
+      "notes": "Alle aantallen op deze slide zijn fictieve voorbeelddata.",
+      "sources": ["Illustratieve voorbeelddata; geen werkelijke projectcijfers."]
+    },
+    {
+      "layout": "chart",
+      "kicker": "VOORBEELDDATA",
+      "title": "Maak de voortgang zichtbaar.",
+      "chart": {
+        "type": "bar",
+        "labels": ["Week 1", "Week 2", "Week 3", "Week 4"],
+        "series": [{ "name": "Fictieve afgeronde acties", "values": [3, 5, 7, 9] }]
+      },
+      "decision": "Kijk samen naar de ontwikkeling én naar wat nog ontbreekt.",
+      "notes": "Deze grafiek bevat fictieve aantallen. Het is een native PowerPoint-grafiek met bewerkbare gegevens.",
+      "sources": ["Fictieve data, uitsluitend om de grafiek-layout te demonstreren."]
+    },
+    {
+      "layout": "bullets",
+      "kicker": "DUIDELIJKE AFSPRAKEN",
+      "title": "Wat spreken we vandaag af?",
+      "bullets": ["Eén helder doel voor de pilot.", "Een eigenaar voor de eerste stap.", "Een moment om samen te evalueren."],
+      "decision": "Besluit: stel de startdatum vast.",
+      "notes": "De startdatum is nog niet bepaald. Vul geen verzonnen datum in."
+    },
+    {
+      "layout": "closing",
+      "kicker": "DE VOLGENDE STAP",
+      "title": "Goed plan.\nSamen vooruit.",
+      "subtitle": "Kies de richting. Zet de eerste stap.\nLeer van het resultaat.",
+      "steps": ["Kiezen", "Doen", "Leren"],
+      "notes": "Herhaal het afgesproken besluit en de eerstvolgende actie."
+    }
+  ]
+}

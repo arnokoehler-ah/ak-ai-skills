@@ -12,6 +12,7 @@ Harness-neutral source. Installed into Claude Code and OpenCode through
 |---|---|---|---|
 | `verify-and-test-project` | Run a project's tests the way CI would, including Stratos component and integration profiles | @arnokoehler-ah | Claude Code |
 | `ah-project-design-visualizer` | Visual project overview with NL/EN switching, evidence, C4, sequences, filters and saved actions | @arnokoehler-ah | OpenCode; Chromium build/browser checks |
+| `ah-business-slides` | Editable AH business PowerPoint decks, native charts, speaker notes and rendered slide previews | @arnokoehler-ah | Node 22; Microsoft PowerPoint 16.114 on macOS |
 
 ## Install
 
@@ -44,8 +45,39 @@ To install only the AH visualizer globally:
 apm install --global --target claude,opencode 'arnokoehler-ah/ak-ai-skills/skills/ah-project-design-visualizer#v1.1.0'
 ```
 
-Global installs use `~/.claude/skills` and `~/.config/opencode/skills`. Authenticate
-with a GitHub account that can read this private repository.
+Global installs use `~/.claude/skills` and `~/.config/opencode/skills`. This
+repository is public.
+
+### AH Business PowerPoint
+
+Install only the presentation skill:
+
+```bash
+apm install --global --target claude,opencode 'arnokoehler-ah/ak-ai-skills/skills/ah-business-slides#v1.2.0'
+```
+
+Ask your agent: **“Gebruik ah-business-slides om een bewerkbare AH-presentatie
+te maken over dit voorstel.”** English briefs work too. The skill creates native
+PowerPoint text, shapes and charts from a documented JSON source, with speaker
+notes and an explicit decision or takeaway. It is an AH-inspired design, not an
+official corporate template.
+
+Requirements: Node 22+, Python 3.10+, and, for visual verification, LibreOffice
+or Microsoft PowerPoint on macOS plus Poppler (`pdftoppm`). The generator itself
+does not require Office. If a renderer is unavailable, the agent reports that the
+editable draft has not been visually verified.
+
+Try the bundled example from `skills/ah-business-slides`:
+
+```bash
+npm ci
+npm run example
+python3 scripts/render-preview.py output/demo.pptx output/preview --renderer libreoffice
+```
+
+Use `--renderer powerpoint` on macOS with PowerPoint. The new preview directory
+contains a PDF, one PNG per slide and `index.html`. The JSON source and local
+images travel with your deck; generated project decks belong outside this skill.
 
 The visualizer requires Python 3 at build time and uses local PlantUML for rendered
 diagrams. Its final HTML works offline. A source-only diagram fallback is available

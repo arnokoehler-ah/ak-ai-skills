@@ -4,3 +4,6 @@ apm_modules/
 .agents/skills/
 __pycache__/
 *.pyc
+node_modules/
+.superpowers/
+skills/ah-business-slides/output/

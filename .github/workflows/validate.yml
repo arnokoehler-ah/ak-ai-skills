@@ -23,3 +23,24 @@ jobs:
           python -m playwright install --with-deps chromium
       - name: Verify visualizer and bilingual behavior
         run: python skills/ah-project-design-visualizer/tests/test_visual_overview.py
+  presentations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: skills/ah-business-slides/package-lock.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+        working-directory: skills/ah-business-slides
+      - run: npm test
+        working-directory: skills/ah-business-slides
+      - run: sudo apt-get update && sudo apt-get install -y libreoffice-impress poppler-utils fonts-liberation
+      - run: npm run example
+        working-directory: skills/ah-business-slides
+      - run: python scripts/render-preview.py output/demo.pptx output/preview --renderer libreoffice
+        working-directory: skills/ah-business-slides
