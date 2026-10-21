@@ -13,6 +13,7 @@ Harness-neutral source. Installed into Claude Code and OpenCode through
 | `verify-and-test-project` | Run a project's tests the way CI would, including Stratos component and integration profiles | @arnokoehler-ah | Claude Code |
 | `ah-project-design-visualizer` | Visual project overview with NL/EN switching, evidence, C4, sequences, filters and saved actions | @arnokoehler-ah | OpenCode; Chromium build/browser checks |
 | `ah-business-slides` | Editable AH business PowerPoint decks, native charts, speaker notes and rendered slide previews | @arnokoehler-ah | Node 22; Microsoft PowerPoint 16.114 on macOS |
+| `ah-architecture-decision-slides` | Evidence-led MT/CTO architecture decisions, stable diagrams, local C4 tooling and native click-controlled PowerPoint animations | @arnokoehler-ah | Node/Python; local PlantUML; PowerPoint read-back/playback |
 
 ## Install
 
@@ -30,7 +31,7 @@ targets:
   - opencode
 dependencies:
   apm:
-    - arnokoehler-ah/ak-ai-skills#v1.2.1
+    - arnokoehler-ah/ak-ai-skills#v1.3.0
 ```
 
 ```bash
@@ -83,6 +84,50 @@ The visualizer requires Python 3 at build time and uses local PlantUML for rende
 diagrams. Its final HTML works offline. A source-only diagram fallback is available
 when PlantUML is absent. New reports include NL/EN switching and fail the build if
 authored translations are missing.
+
+## Architecture decisions for MT and CTO
+
+```bash
+apm install --global --target claude,opencode 'arnokoehler-ah/ak-ai-skills/skills/ah-architecture-decision-slides#v1.3.0'
+```
+
+Ask: **“Gebruik ah-architecture-decision-slides om dit architectuurbesluit voor het
+MT te onderbouwen, inclusief alternatieven en een klikgestuurde uitleg.”**
+
+The skill combines a business decision story, same-level before/after views,
+baseline alternatives, stable native interaction diagrams, tables and callouts.
+It distinguishes source claims, hypotheses, proposals and examples. A synthetic
+six-slide demo and a separate C4 context model are included.
+
+- [Editable demo](skills/ah-architecture-decision-slides/examples/demo.pptx)
+- [Animated demo](skills/ah-architecture-decision-slides/examples/demo-animated.pptx)
+- [Slideshow](skills/ah-architecture-decision-slides/examples/demo.ppsx)
+- [PDF handout](skills/ah-architecture-decision-slides/examples/demo.pdf)
+
+Node 22+ and Python 3.10+ are required. Animation authoring is portable and does
+not require Office; generated `.pptx`/`.ppsx` contain native effects and no macros.
+PowerPoint is the tested playback target. Visual verification uses installed
+PowerPoint on macOS or LibreOffice plus Poppler.
+
+The doctor diagnoses existing tools and actually smoke-tests local C4 rendering.
+It **never installs software**. Missing dependencies require an explicit approved
+installation plan. C4 rendering accepts bounded plain-label JSON, uses local
+PlantUML under SANDBOX and rejects remote references; it keeps `.puml` source and
+an honest missing/broken status when rendering is unavailable.
+
+After approved dependency setup, from the skill folder:
+
+```bash
+bash scripts/doctor.sh
+npm ci --ignore-scripts
+npm run example
+python3 scripts/animate.py output/demo/presentation.pptx output/demo/animation-plan.json output/demo/animated.pptx --show output/demo/animated.ppsx
+bash scripts/verify.sh output/demo/animated.pptx
+bash scripts/render-diagrams.sh examples/context.json output/context
+```
+
+Output directories must be new. The complete schema, installation policy,
+narrative guidance and playback checks live under the skill's `references/`.
 
 ## Visualizer source
 

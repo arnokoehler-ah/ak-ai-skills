@@ -1,0 +1,14 @@
+{
+  "title": "Fictief klantstatuslandschap",
+  "nodes": [
+    {"id":"customer","type":"person","title":"Klant","description":"Wil weten wat de status is"},
+    {"id":"portal","type":"system","title":"Klantportaal","description":"Toont de klantstatus"},
+    {"id":"processing","type":"system","title":"Verwerkingssysteem","description":"Verwerkt aanvragen"},
+    {"id":"status","type":"system","title":"Statussysteem","description":"Maakt statusinformatie beschikbaar"}
+  ],
+  "relationships":[
+    {"from":"customer","to":"portal","label":"Vraagt status op"},
+    {"from":"processing","to":"status","label":"Deelt een statuswijziging"},
+    {"from":"portal","to":"status","label":"Leest beschikbare status"}
+  ]
+}

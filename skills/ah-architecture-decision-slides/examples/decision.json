@@ -1,0 +1,87 @@
+{
+  "title": "Een actueler klantbeeld",
+  "language": "nl",
+  "audience": "cto",
+  "models": {
+    "status_flow": {
+      "nodes": [
+        {"id":"processing","title":"Verwerking","detail":"Verwerkt aanvragen","x":0.2,"y":0.2,"w":2.8,"h":0.9},
+        {"id":"status","title":"Statusdienst","detail":"Houdt de status bij","x":4.55,"y":0.2,"w":2.8,"h":0.9},
+        {"id":"portal","title":"Klantportaal","detail":"Laat status zien","x":8.95,"y":0.2,"w":2.75,"h":0.9}
+      ],
+      "edges": [
+        {"id":"change","from":"processing","to":"status","label":"Wijziging","kind":"request"},
+        {"id":"read","from":"status","to":"portal","label":"Status","kind":"response"}
+      ],
+      "annotations": [{"id":"assumption","text":"Doelbeeld: actualiteit en beheerlast moeten nog worden gemeten.","x":0.2,"y":1.3,"w":11.5,"h":0.5,"tone":"info"}]
+    }
+  },
+  "slides": [
+    {
+      "id":"why","layout":"columns","basis":"example","kicker":"WAAROM DIT EEN BUSINESSKEUZE IS",
+      "title":"De nachtbatch bepaalt\nwanneer de klant iets weet.",
+      "columns":[
+        {"label":"WAARNEMING","title":"Een gedeeld ritme.","body":"Twee systemen wachten\nop hetzelfde batchmoment."},
+        {"label":"CONSEQUENTIE","title":"De klant wacht mee.","body":"Een wijziging kan verwerkt zijn\nvoordat de klant haar ziet."},
+        {"label":"BESLISVRAAG","title":"Wat moet actueler?","body":"Bepaal eerst de gewenste\nactualiteit en de klantwaarde."}
+      ],
+      "takeaway":"Een technisch knelpunt krijgt betekenis door de klantbelofte die het beperkt.",
+      "notes":"Volledig fictieve demonstratie. Geen gemeten wachttijd, omzetimpact of ROI beschikbaar. De bron voor dit voorbeeld is uitsluitend de voorbeeldbeschrijving."
+    },
+    {
+      "id":"change","layout":"before_after","basis":"example","kicker":"WAT VERANDERT ER CONCREET?",
+      "title":"Van een gezamenlijk tijdstip\nnaar eigen verantwoordelijkheden.",
+      "rows":[
+        {"label":"VERWERKING","before":"Wachten op de nachtbatch.","after":"Wijzigingen afzonderlijk verwerken."},
+        {"label":"STATUS","before":"Status na de gezamenlijke run.","after":"Status volgt de verwerkte wijziging."},
+        {"label":"BEHEER","before":"Een gezamenlijk batchproces.","after":"Overdracht en fouten expliciet volgen."}
+      ],
+      "takeaway":"Het doelbeeld biedt een mogelijkheid; betrouwbaarheid en beheerlast vragen nog bewijs.",
+      "notes":"Voorbeeld van een mogelijke richting. Er wordt geen technische transportkeuze of gegarandeerde doorlooptijd voorgeschreven."
+    },
+    {
+      "id":"options","layout":"options","basis":"example","kicker":"VERGELIJK OOK DE BASELINE",
+      "title":"Niet veranderen is ook een keuze.\nMaak de consequenties zichtbaar.",
+      "options":[
+        {"title":"Niets doen","benefit":"Geen migratie nodig.","tradeoff":"De huidige wachttijd blijft.","baseline":true},
+        {"title":"Vaker batchen","benefit":"Een kleinere eerste stap.","tradeoff":"De gedeelde koppeling blijft."},
+        {"title":"Ontkoppelen","benefit":"Eigen ritmes worden mogelijk.","tradeoff":"Meer overdrachten en beheer."}
+      ],
+      "takeaway":"Kies op klantwaarde, betrouwbaarheid, inspanning en omkeerbaarheid — niet op moderniteit.",
+      "notes":"Kwalitatieve vergelijking van fictieve opties. Geen gewogen totaalscore of ROI verzonnen; nader onderzoek moet de trade-offs kwantificeren."
+    },
+    {
+      "id":"interaction","layout":"interaction","basis":"example","model":"status_flow","kicker":"HET DOELBEELD IN DRIE KLIKSTAPPEN",
+      "title":"Laat één concrete wijziging\ndoor de keten lopen.",
+      "takeaway":"De klantstatus volgt de verwerking; de gewenste actualiteit moet nog worden aangetoond.",
+      "steps":[
+        {"cue":"Dit zijn de drie verantwoordelijkheden; de posities blijven vast.","show":[{"target":"node-processing","effect":"fly-left"},{"target":"node-status","effect":"fly-left"},{"target":"node-portal","effect":"fly-right"}]},
+        {"cue":"Na de verwerking wordt de gewijzigde status doorgegeven.","show":[{"target":"edge-change","effect":"wipe-left"}]},
+        {"cue":"Het portaal kan de status tonen. Actualiteit en beheerlast moeten nog worden getoetst.","show":[{"target":"edge-read","effect":"wipe-left"},{"target":"note-assumption","effect":"fade"},{"target":"takeaway","effect":"fade"}]}
+      ],
+      "notes":"Logisch interactiemodel, geen claim over bewezen deployments of een gekozen eventplatform. De volledige handout en geanimeerde variant gebruiken dezelfde componenten en posities."
+    },
+    {
+      "id":"evidence","layout":"interaction","basis":"example","model":"status_flow","focus":["read"],"kicker":"DEZELFDE PLAAT, MET HET ONTBREKENDE BEWIJS",
+      "title":"Een pijl is nog geen businesscase.",
+      "table":{
+        "columns":[{"key":"question","title":"Wat moet worden getoetst?"},{"key":"known","title":"Wat weten we nu?"},{"key":"next","title":"Volgende stap"}],
+        "rows":[{"question":"Klantvertraging","known":"Nog te meten","next":"Meet de huidige doorlooptijd"},{"question":"Beheerlast","known":"Nog te onderzoeken","next":"Test fouten en herstel"},{"question":"Rendement","known":"Niet vastgesteld","next":"Onderbouw de businesscase"}],
+        "emphasisRows":[2]
+      },
+      "takeaway":"Leg de ontbrekende onderbouwing naast het doelbeeld, zodat het besluit toetsbaar wordt.",
+      "notes":"De modelposities zijn exact dezelfde als op de vorige slide. De tabel geeft onderzoeksvragen weer, geen meetresultaten."
+    },
+    {
+      "id":"decision","layout":"columns","basis":"example","kicker":"EEN CONCREET EN BEGRENSD MANDAAT",
+      "title":"Vraag ruimte om de keuze\nverantwoord te onderbouwen.",
+      "columns":[
+        {"label":"NU VRAGEN","title":"Analyse en proef.","body":"Een eigenaar en een tijdvak.\nEen afgebakende proef.\nEen expliciete beslisvraag."},
+        {"label":"EERST LEREN","title":"Toets de aannames.","body":"Meet klantvertraging.\nTest fouten en herstel.\nOnderzoek inspanning en kosten."},
+        {"label":"DAN BESLISSEN","title":"Kies de vervolgstap.","body":"Doorgaan, aanpassen of stoppen.\nBudget en fasering expliciet.\nMaak de keuze omkeerbaar."}
+      ],
+      "takeaway":"Vraag geen blanco akkoord op een eindarchitectuur; vraag een besluit dat past bij het bewijs.",
+      "notes":"Voorbeeldbesluit. Eigenaar, datum, budget en succesgrenzen zijn bewust niet ingevuld omdat daar geen feiten voor zijn aangeleverd."
+    }
+  ]
+}

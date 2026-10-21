@@ -1,0 +1,18 @@
+@startuml
+!include <C4/C4_Context>
+LAYOUT_LEFT_RIGHT()
+skinparam backgroundColor white
+skinparam defaultFontName Arial
+skinparam dpi 144
+title Fictief klantstatuslandschap
+UpdateElementStyle("system", $bgColor="#EAF8FE", $fontColor="#003B67", $borderColor="#00ADE6")
+UpdateElementStyle("person", $bgColor="#003B67", $fontColor="#FFFFFF")
+Person(customer, "Klant", "Wil weten wat de status is")
+System(portal, "Klantportaal", "Toont de klantstatus")
+System(processing, "Verwerkingssysteem", "Verwerkt aanvragen")
+System(status, "Statussysteem", "Maakt statusinformatie beschikbaar")
+Rel(customer, portal, "Vraagt status op")
+Rel(processing, status, "Deelt een statuswijziging")
+Rel(portal, status, "Leest beschikbare status")
+SHOW_LEGEND()
+@enduml
