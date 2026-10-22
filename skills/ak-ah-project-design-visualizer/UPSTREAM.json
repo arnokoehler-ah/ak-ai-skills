@@ -1,11 +1,11 @@
 {
   "source_repository": "https://github.com/arnokoehler/ak-ai-skills",
-  "source_revision": "bc8bef9691b08cf99308d772f938e2e838a5ea58",
+  "source_revision": "b1f9abb35b3b7c0a018ad1863658c7f109a2d343",
   "source_working_tree": "clean",
-  "source_path": "skills/project-design-visualizer",
-  "distribution_name": "ah-project-design-visualizer",
+  "source_path": "skills/ak-project-design-visualizer",
+  "distribution_name": "ak-ah-project-design-visualizer",
   "files": {
-    "SKILL.md": "a618e2bbea2dc891e069f809910363be1002539a2a99e8f8f7a05df19594a981",
+    "SKILL.md": "613524e9619d7bc2d06ff43d2ad1f01ef4d1122c49be694105524f8f87999711",
     "assets/bilingual-overviews.md": "82c02edbb8bacea815ecbc47e1c705c1e37fd8476870c4963502ce23ac66600a",
     "assets/build.sh": "e0b38a8b8c6c1465daf4d3eaf7d174c04d91abdbe4972d231500936727112a3a",
     "assets/example-current-state.yaml": "2ab2a0f45f845ae4a4815bbc94a3cf1f805324bd9dca0a1a8418ef9a7743ae8f",

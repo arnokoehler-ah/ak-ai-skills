@@ -1,9 +1,9 @@
 ---
-name: verify-and-test-project
+name: ak-ah-verify-and-test-project
 description: Run tests and verification for any project the way CI would. Branches on project ownership — Ahold/Albert Heijn projects have known Stratos quirks (component/integration profiles, *CT/*IT suffixes); other projects fall back to project-type defaults (Maven, Gradle, npm, Cargo, Go, Python).
 ---
 
-# verify-and-test-project
+# ak-ah-verify-and-test-project
 
 Runs the full test + verify pipeline locally the way CI runs it. The first decision is whether this is an Ahold/Albert Heijn (Stratos) project — those have quirks that `mvn test` alone does not catch.
 

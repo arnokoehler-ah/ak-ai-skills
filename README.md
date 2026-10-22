@@ -10,12 +10,16 @@ Harness-neutral source. Installed into Claude Code and OpenCode through
 
 | Skill | Purpose | Owner | Tested on |
 |---|---|---|---|
-| `verify-and-test-project` | Run a project's tests the way CI would, including Stratos component and integration profiles | @arnokoehler-ah | Claude Code |
-| `ah-project-design-visualizer` | Visual project overview with NL/EN switching, evidence, C4, sequences, filters and saved actions | @arnokoehler-ah | OpenCode; Chromium build/browser checks |
-| `ah-business-slides` | Editable AH business PowerPoint decks, native charts, speaker notes and rendered slide previews | @arnokoehler-ah | Node 22; Microsoft PowerPoint 16.114 on macOS |
-| `ah-architecture-decision-slides` | Evidence-led MT/CTO architecture decisions, stable diagrams, local C4 tooling and native click-controlled PowerPoint animations | @arnokoehler-ah | Node/Python; local PlantUML; PowerPoint read-back/playback |
+| `ak-ah-verify-and-test-project` | Run a project's tests the way CI would, including Stratos component and integration profiles | @arnokoehler-ah | Claude Code |
+| `ak-ah-project-design-visualizer` | Visual project overview with NL/EN switching, evidence, C4, sequences, filters and saved actions | @arnokoehler-ah | OpenCode; Chromium build/browser checks |
+| `ak-ah-business-slides` | Editable AH business PowerPoint decks, native charts, speaker notes and rendered slide previews | @arnokoehler-ah | Node 22; Microsoft PowerPoint 16.114 on macOS |
+| `ak-ah-architecture-decision-slides` | Evidence-led MT/CTO architecture decisions, stable diagrams, local C4 tooling and native click-controlled PowerPoint animations | @arnokoehler-ah | Node/Python; local PlantUML; PowerPoint read-back/playback |
 
 ## Install
+
+Version 2.0.0 gives every skill in this collection an `ak-ah-` prefix. Update old
+leaf dependencies and invocation names when upgrading. Historical upstream
+provenance records retain the names and paths that existed at the recorded revision.
 
 ```bash
 brew install apm
@@ -31,7 +35,7 @@ targets:
   - opencode
 dependencies:
   apm:
-    - arnokoehler-ah/ak-ai-skills#v1.3.0
+    - arnokoehler-ah/ak-ai-skills#v2.0.0
 ```
 
 ```bash
@@ -43,7 +47,7 @@ APM deploys to `.claude/skills/<name>/` and `.agents/skills/<name>/`.
 To install only the AH visualizer globally:
 
 ```bash
-apm install --global --target claude,opencode 'arnokoehler-ah/ak-ai-skills/skills/ah-project-design-visualizer#v1.1.0'
+apm install --global --target claude,opencode 'arnokoehler-ah/ak-ai-skills/skills/ak-ah-project-design-visualizer#v2.0.0'
 ```
 
 Global installs use `~/.claude/skills` and `~/.config/opencode/skills`. This
@@ -54,10 +58,10 @@ repository is public.
 Install only the presentation skill:
 
 ```bash
-apm install --global --target claude,opencode 'arnokoehler-ah/ak-ai-skills/skills/ah-business-slides#v1.2.1'
+apm install --global --target claude,opencode 'arnokoehler-ah/ak-ai-skills/skills/ak-ah-business-slides#v2.0.0'
 ```
 
-Ask your agent: **“Gebruik ah-business-slides om een bewerkbare AH-presentatie
+Ask your agent: **“Gebruik ak-ah-business-slides om een bewerkbare AH-presentatie
 te maken over dit voorstel.”** English briefs work too. The skill creates native
 PowerPoint text, shapes and charts from a documented JSON source, with speaker
 notes and an explicit decision or takeaway. It is an AH-inspired design, not an
@@ -68,7 +72,7 @@ or Microsoft PowerPoint on macOS plus Poppler (`pdftoppm`). The generator itself
 does not require Office. If a renderer is unavailable, the agent reports that the
 editable draft has not been visually verified.
 
-Try the bundled example from `skills/ah-business-slides`:
+Try the bundled example from `skills/ak-ah-business-slides`:
 
 ```bash
 npm ci
@@ -88,10 +92,10 @@ authored translations are missing.
 ## Architecture decisions for MT and CTO
 
 ```bash
-apm install --global --target claude,opencode 'arnokoehler-ah/ak-ai-skills/skills/ah-architecture-decision-slides#v1.3.0'
+apm install --global --target claude,opencode 'arnokoehler-ah/ak-ai-skills/skills/ak-ah-architecture-decision-slides#v2.0.0'
 ```
 
-Ask: **“Gebruik ah-architecture-decision-slides om dit architectuurbesluit voor het
+Ask: **“Gebruik ak-ah-architecture-decision-slides om dit architectuurbesluit voor het
 MT te onderbouwen, inclusief alternatieven en een klikgestuurde uitleg.”**
 
 The skill combines a business decision story, same-level before/after views,
@@ -99,10 +103,10 @@ baseline alternatives, stable native interaction diagrams, tables and callouts.
 It distinguishes source claims, hypotheses, proposals and examples. A synthetic
 six-slide demo and a separate C4 context model are included.
 
-- [Editable demo](skills/ah-architecture-decision-slides/examples/demo.pptx)
-- [Animated demo](skills/ah-architecture-decision-slides/examples/demo-animated.pptx)
-- [Slideshow](skills/ah-architecture-decision-slides/examples/demo.ppsx)
-- [PDF handout](skills/ah-architecture-decision-slides/examples/demo.pdf)
+- [Editable demo](skills/ak-ah-architecture-decision-slides/examples/demo.pptx)
+- [Animated demo](skills/ak-ah-architecture-decision-slides/examples/demo-animated.pptx)
+- [Slideshow](skills/ak-ah-architecture-decision-slides/examples/demo.ppsx)
+- [PDF handout](skills/ak-ah-architecture-decision-slides/examples/demo.pdf)
 
 Node 22+ and Python 3.10+ are required. Animation authoring is portable and does
 not require Office; generated `.pptx`/`.ppsx` contain native effects and no macros.
@@ -131,8 +135,8 @@ narrative guidance and playback checks live under the skill's `references/`.
 
 ## Visualizer source
 
-`ah-project-design-visualizer` is a self-contained, renamed distribution of the
-portable `project-design-visualizer` from `arnokoehler/ak-ai-skills`. Installing this
+`ak-ah-project-design-visualizer` is a self-contained, renamed distribution of the
+portable `ak-project-design-visualizer` from `arnokoehler/ak-ai-skills`. Installing this
 AH package does not require access to the personal repository. The implementation
 is synchronized with the canonical source; `UPSTREAM.json` records its revision
 and file hashes. Make shared changes in the canonical source and regenerate this

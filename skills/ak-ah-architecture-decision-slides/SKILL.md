@@ -1,5 +1,5 @@
 ---
-name: ah-architecture-decision-slides
+name: ak-ah-architecture-decision-slides
 description: Use when preparing an AH architecture decision or investment presentation for MT, CTO or C-level, explaining why systems should change, comparing alternatives, or presenting C4 context and step-by-step architecture interactions with editable PowerPoint animations.
 ---
 

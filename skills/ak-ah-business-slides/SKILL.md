@@ -1,5 +1,5 @@
 ---
-name: ah-business-slides
+name: ak-ah-business-slides
 description: Use when creating or updating a professional Albert Heijn or AH business presentation, management deck, proposal, roadmap, project update or editable PowerPoint in a clean corporate style.
 ---
 

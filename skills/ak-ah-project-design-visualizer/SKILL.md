@@ -1,10 +1,10 @@
 ---
-name: ah-project-design-visualizer
+name: ak-ah-project-design-visualizer
 disable-model-invocation: true
 description: Use when a developer needs to understand an unfamiliar or vibe-coded project's actual architecture, working features, gaps, or data flows, especially when they want an accessible visual overview with deeper code evidence, C4, and sequence diagrams.
 ---
 
-# ah-project-design-visualizer
+# ak-ah-project-design-visualizer
 
 This skill reconstructs the **current, actual state** of a project from repository evidence — not an idealized or aspirational architecture. It produces two artifacts: a canonical `docs/current-state.yaml` (the full evidence-tagged inventory) and a self-contained `docs/project-overview.html` (the rendered view). Write the YAML and PlantUML diagrams first, derive the JSON render data from them, then run the build to produce the HTML. Every claim in every artifact must carry an evidence tag (`VERIFIED`, `INFERRED`, or `UNKNOWN`). If you cannot verify something from the code, say so.
 
